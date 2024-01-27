@@ -9,9 +9,15 @@ import { getUserInput } from "./utils.js";
     console.log(dig);
 })()
 
-function getGCD(n1, n2) {
+function getGCD(num1, num2) {
 
-    for (let i = Math.min(n1, n2); i >= 1; i--) {
+    let n1 = Math.max(num1, num2)
+    let n2 = Math.min(num1, num2)
+
+    //Eucleadean alogo 
+    //gcd(n1,n2) = gcd(n1-n2,n2) where n1 >n2
+
+    for (let i = Math.min(n1 - n2, n2); i >= 1; i--) {
 
         if (n1 % i === 0 && n2 % i === 0) {
             return i;
