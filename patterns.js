@@ -1,5 +1,5 @@
 
-const { getUserInput } = require('./utils')
+const { getUserInput } = require('./utils.js')
 
 
 
