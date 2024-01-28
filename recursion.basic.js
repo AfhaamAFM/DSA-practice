@@ -28,22 +28,38 @@ function print1ToN(i, n) {
 }
 
 
-function reverseArray(arr, start, last) {
+function reverseArray(i, arr, n) {
 
-    if (last <= start) return arr;
+    if (i >= n / 2) return;
 
-    [arr[start], arr[last]] = [arr[last], arr[start]];
-    return reverseArray(arr, start + 1, last - 1)
+    [arr[i], arr[n - 1 - i]] = [arr[n - 1 - i], arr[i]];
+    return reverseArray(i + 1, arr, n)
 
 }
+function checkStringPalindrome(i, string, n) {
+
+    if (i >= n / 2) return true;
+
+    if (string[i] != string[n - 1 - i]) return false
+    return checkStringPalindrome(i + 1, string, n)
+
+}
+
+function fibonacciSeries(n) {
+
+    if (n <= 1) return n
+
+
+    return fibonacciSeries(n - 1) + fibonacciSeries(n - 2)
+
+}
+
 function main() {
-    // console.log(reverseArray([4, 3, 1, 4], 0, 4))
 
-    let arr = [4, 3, 5, 1, 7, 3, 1, .6, "dsads"];
-
-    const revered = reverseArray(arr, 0, arr.length - 1)
-
-    console.log(revered);
+    for (let i = 0; i <= 5; i++) {
+        const b = fibonacciSeries(i)
+        console.log(b)
+    }
 }
 
 
